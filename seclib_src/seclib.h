@@ -7161,7 +7161,11 @@ USHORT CalcChecksum16(void *buf, UINT size);
 #pragma comment(lib, "Netapi32.lib")
 #pragma comment(lib, "shlwapi.lib")
 #pragma comment(lib, "crypt32.lib")
-#pragma warning( disable : 4099 )
+
+// OpenSSL
+#pragma comment(lib, "libcrypto.lib")
+#pragma comment(lib, "libssl.lib")
+#pragma comment(lib, "zlib.lib")
 #endif	// OS_WIN32
 
 

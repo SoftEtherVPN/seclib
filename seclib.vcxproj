@@ -139,6 +139,8 @@
       <OptimizeReferences>false</OptimizeReferences>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <GenerateMapFile>true</GenerateMapFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)seclib_src\win32_libs\vs2017\$(PlatformName)_$(ConfigurationName)</AdditionalLibraryDirectories>
+      <AdditionalOptions>/IGNORE:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -167,6 +169,8 @@
       <OptimizeReferences>false</OptimizeReferences>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <GenerateMapFile>true</GenerateMapFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)seclib_src\win32_libs\vs2017\$(PlatformName)_$(ConfigurationName)</AdditionalLibraryDirectories>
+      <AdditionalOptions>/IGNORE:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -198,6 +202,8 @@
       <MapFileName>$(SolutionDir)obj\map\$(PlatformName)_$(ConfigurationName)\$(ProjectName).map</MapFileName>
       <StackReserveSize>100000</StackReserveSize>
       <GenerateMapFile>true</GenerateMapFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)seclib_src\win32_libs\vs2017\$(PlatformName)_$(ConfigurationName)</AdditionalLibraryDirectories>
+      <AdditionalOptions>/IGNORE:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -229,6 +235,8 @@
       <MapFileName>$(SolutionDir)obj\map\$(PlatformName)_$(ConfigurationName)\$(ProjectName).map</MapFileName>
       <StackReserveSize>100000</StackReserveSize>
       <GenerateMapFile>true</GenerateMapFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)seclib_src\win32_libs\vs2017\$(PlatformName)_$(ConfigurationName)</AdditionalLibraryDirectories>
+      <AdditionalOptions>/IGNORE:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
