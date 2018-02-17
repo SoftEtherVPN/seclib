@@ -137,8 +137,8 @@
       <ProgramDatabaseFile>$(SolutionDir)obj\pdb\$(PlatformName)_$(ConfigurationName)\$(ProjectName).pdb</ProgramDatabaseFile>
       <MapFileName>$(SolutionDir)obj\map\$(PlatformName)_$(ConfigurationName)\$(ProjectName).map</MapFileName>
       <StackReserveSize>100000</StackReserveSize>
-      <OptimizeReferences>false</OptimizeReferences>
-      <EnableCOMDATFolding>false</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateMapFile>true</GenerateMapFile>
       <AdditionalLibraryDirectories>$(SolutionDir)seclib_src\win32_libs\vs2017\$(PlatformName)_$(ConfigurationName)</AdditionalLibraryDirectories>
       <AdditionalOptions>/IGNORE:4099 %(AdditionalOptions)</AdditionalOptions>
@@ -168,8 +168,8 @@
       <ProgramDatabaseFile>$(SolutionDir)obj\pdb\$(PlatformName)_$(ConfigurationName)\$(ProjectName).pdb</ProgramDatabaseFile>
       <MapFileName>$(SolutionDir)obj\map\$(PlatformName)_$(ConfigurationName)\$(ProjectName).map</MapFileName>
       <StackReserveSize>100000</StackReserveSize>
-      <OptimizeReferences>false</OptimizeReferences>
-      <EnableCOMDATFolding>false</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateMapFile>true</GenerateMapFile>
       <AdditionalLibraryDirectories>$(SolutionDir)seclib_src\win32_libs\vs2017\$(PlatformName)_$(ConfigurationName)</AdditionalLibraryDirectories>
       <AdditionalOptions>/IGNORE:4099 %(AdditionalOptions)</AdditionalOptions>
@@ -197,8 +197,8 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>false</EnableCOMDATFolding>
-      <OptimizeReferences>false</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <ProgramDatabaseFile>$(SolutionDir)obj\pdb\$(PlatformName)_$(ConfigurationName)\$(ProjectName).pdb</ProgramDatabaseFile>
@@ -231,8 +231,8 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>false</EnableCOMDATFolding>
-      <OptimizeReferences>false</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <ProgramDatabaseFile>$(SolutionDir)obj\pdb\$(PlatformName)_$(ConfigurationName)\$(ProjectName).pdb</ProgramDatabaseFile>
