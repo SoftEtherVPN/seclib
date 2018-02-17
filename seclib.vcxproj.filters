@@ -26,5 +26,8 @@
     <ClCompile Include="seclib_src\seclib.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="seclib_src\srclib_win32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
