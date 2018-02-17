@@ -92,25 +92,33 @@
 #define	STRTABLE_ID					"SEC_TABLE_180217"	// String table identifier
 
 // Determining the OS
-#ifdef	WIN32
+#ifdef	_WIN32
 #define	OS_WIN32		// Microsoft Windows
 #else
 #define	OS_UNIX			// UNIX
-#endif	// WIN32
+#define UNIX_LINUX		// Linux
+#endif	// _WIN32
+
+// Detemining CPU
+#if defined(__LP64__) || defined(_LP64) || defined(_WIN64) || defined(__x86_64__) || defined(__powerpc64__) || defined(__aarch64__) || defined(_____LP64_____) ||  (UINTPTR_MAX == 0xffffffffffffffff)
+#define	CPU_64
+#endif // defined(__LP64__) || defined(_LP64) || defined(_WIN64) || defined(__x86_64__) || defined(__powerpc64__) || defined(__aarch64__) || defined(_____LP64_____) ||  (UINTPTR_MAX == 0xffffffffffffffff)
+
+
 
 // Directory separator
 #ifdef	OS_WIN32
 #define	PATH_BACKSLASH	// Backslash (\)
-#else	// WIN32
+#else	// _WIN32
 #define	PATH_SLASH		// Slash (/)
-#endif	// WIN32
+#endif	// _WIN32
 
 // Character code
 #ifdef	OS_WIN32
 #define	CODE_SHIFTJIS	// Shift_JIS code
-#else	// WIN32
+#else	// _WIN32
 #define	CODE_EUC		// euc-jp code
-#endif	// WIN32
+#endif	// _WIN32
 
 // Endian
 #define	IsBigEndian()		(g_little_endian ? false : true)
@@ -158,11 +166,11 @@
 
 
 // Macro that displays the current time
-#ifdef	WIN32
+#ifdef	_WIN32
 #define	WHEN			if (IsDebug()){WHERE; MsPrintTick();}
-#else	// WIN32
+#else	// _WIN32
 #define	WHEN
-#endif	// WIN32
+#endif	// _WIN32
 
 #ifdef	OS_UNIX
 #ifndef	UNIX_SOLARIS
@@ -487,11 +495,11 @@ struct tuninfo {
 #endif	// OS_UNIX
 
 // IPv6 support flag
-#ifndef	WIN32
+#ifndef	_WIN32
 #ifndef	AF_INET6
 #define	NO_IPV6
 #endif	// AF_INET6
-#endif	// WIN32
+#endif	// _WIN32
 
 //////////////////////////////////////////////////////////////////////////
 // MayaType

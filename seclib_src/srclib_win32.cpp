@@ -1,4 +1,4 @@
-#ifdef	WIN32
+#ifdef	_WIN32
 
 #define	WIN32COM_CPP
 #define _WIN32_DCOM
@@ -1231,4 +1231,4 @@ CT_ARGB32 CT_GetAAPix32(UCHAR* srcPtr, int width, int height, int xFix, int yFix
 
 }
 
-#endif // WIN32
+#endif // _WIN32

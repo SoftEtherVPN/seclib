@@ -2,4 +2,5 @@
 bin/*.exe
 obj/
 *.ilk
+*.dmp
 
