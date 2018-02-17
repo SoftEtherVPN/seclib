@@ -20,10 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="seclib_src\seclib.h" />
-    <ClInclude Include="seclib_src\seclib_internal.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="seclib_src\seclib_common.c" />
+    <ClCompile Include="seclib_src\seclib.c" />
     <ClCompile Include="seclib_src\seclib_test.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -83,25 +82,25 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(PlatformName)_$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)obj\obj\$(PlatformName)_$(Configuration)\</IntDir>
     <TargetName>sectest_$(PlatformShortName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(PlatformName)_$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)obj\obj\$(PlatformName)_$(Configuration)\</IntDir>
     <TargetName>sectest_$(PlatformShortName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(PlatformName)_$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)obj\obj\$(PlatformName)_$(Configuration)\</IntDir>
     <TargetName>sectest_$(PlatformShortName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(PlatformName)_$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)obj\obj\$(PlatformName)_$(Configuration)\</IntDir>
     <TargetName>sectest_$(PlatformShortName)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

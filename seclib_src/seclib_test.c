@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "seclib.h"
+#include <seclib.h>
 
 int main()
 {
