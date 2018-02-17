@@ -84,6 +84,8 @@
 
 
 // Constant
+#define	PENCORE_DLL_NAME		"|PenCore.dll"
+
 #define	DEFAULT_TABLE_FILE_NAME		"|strtable.stb"		// Default string table
 //#define	DEFAULT_TABLE_FILE_NAME		"@hamcore_zh/strtable.stb"		// Test for Chinese
 
@@ -6883,7 +6885,7 @@ void MsProcLeaveSuspend();
 UINT64 MsGetSuspendModeBeginTick();
 
 // Inner functions
-#ifdef	MICROSOFT_C
+#ifdef	SECLIB_INTERNAL
 
 LONG CALLBACK MsExceptionHandler(struct _EXCEPTION_POINTERS *ExceptionInfo);
 HKEY MsGetRootKeyFromInt(UINT root);
