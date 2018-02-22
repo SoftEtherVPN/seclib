@@ -3,23 +3,25 @@
 
 int main(int argc, char *argv[])
 {
-	MayaquaMinimalMode();
+	//MayaquaMinimalMode();
 	InitMayaqua(false, true, argc, argv);
 	InitCedar();
 
 	Print("Hello World\n");
 
+	if (false)
 	{
-		UNI_TOKEN_LIST* w = EnumDirWithSubDirsW(L"c:\\sec\\vpn4");
-		
-		UINT i;
+		char *src_dir = "@hamcore";
+		char *dst_filename = "c:\\tmp\\test.dat";
 
-		for (i = 0;i < w->NumTokens;i++)
-		{
-			Print("%u %S\n", i, w->Token[i]);
-		}
+		Print("Src Dir: '%s'\n", src_dir);
+		Print("Dest Filename: '%s'\n", dst_filename);
 
-		UniFreeToken(w);
+		Print("\nProcessing...\n");
+
+		BuildHamcore(dst_filename, src_dir, true);
+
+		Print("\nDone.\n");
 	}
 
 	FreeCedar();

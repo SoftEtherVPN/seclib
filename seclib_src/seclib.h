@@ -86,7 +86,6 @@
 // Constant
 #define	PENCORE_DLL_NAME		"|PenCore.dll"
 
-#define	DEFAULT_TABLE_FILE_NAME		"|strtable.stb"		// Default string table
 //#define	DEFAULT_TABLE_FILE_NAME		"@hamcore_zh/strtable.stb"		// Test for Chinese
 
 #define	STRTABLE_ID					"SEC_TABLE_180217"	// String table identifier
