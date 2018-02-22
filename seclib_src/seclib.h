@@ -95,6 +95,7 @@
 #define	OS_WIN32		// Microsoft Windows
 #else
 #define	OS_UNIX			// UNIX
+#define	UNIX			// UNIX
 #define UNIX_LINUX		// Linux
 #endif	// _WIN32
 

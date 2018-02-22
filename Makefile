@@ -1,16 +1,16 @@
 # Makefile
 
-OPTIONS_COMPILE_DEBUG=-D_DEBUG -DDEBUG -DUNIX -DUNIX_LINUX -DCPU_64 -D_REENTRANT -DREENTRANT -D_THREAD_SAFE -D_THREADSAFE -DTHREAD_SAFE -DTHREADSAFE -D_FILE_OFFSET_BITS=64 -I./seclib_src/ -g -fsigned-char
+OPTIONS_COMPILE_DEBUG=-D_DEBUG -DDEBUG -D_REENTRANT -DREENTRANT -D_THREAD_SAFE -D_THREADSAFE -DTHREAD_SAFE -DTHREADSAFE -D_FILE_OFFSET_BITS=64 -I./seclib_src/ -g -fsigned-char
 
 OPTIONS_LINK_DEBUG=-g -fsigned-char -lm -ldl -lrt -lpthread -lssl -lcrypto -lreadline -lncurses -lz
 
-OPTIONS_COMPILE_RELEASE=-DNDEBUG -DVPN_SPEED -DUNIX -DUNIX_LINUX -DCPU_64 -D_REENTRANT -DREENTRANT -D_THREAD_SAFE -D_THREADSAFE -DTHREAD_SAFE -DTHREADSAFE -D_FILE_OFFSET_BITS=64 -I./seclib_src/ -O2 -fsigned-char
+OPTIONS_COMPILE_RELEASE=-DNDEBUG -DVPN_SPEED -D_REENTRANT -DREENTRANT -D_THREAD_SAFE -D_THREADSAFE -DTHREAD_SAFE -DTHREADSAFE -D_FILE_OFFSET_BITS=64 -I./seclib_src/ -O2 -fsigned-char
 
 OPTIONS_LINK_RELEASE=-O2 -fsigned-char -lm -ldl -lrt -lpthread -lssl -lcrypto -lreadline -lncurses -lz
 
 HEADERS_SECLIB=seclib_src/seclib.h
 
-OBJECTS_SECLIB=obj/obj/linux-x86/seclib.o
+OBJECTS_SECLIB=obj/obj/linux-x86/seclib.o obj/obj/linux-x86/seclib_test.o
 
 ifeq ($(DEBUG),YES)
 	OPTIONS_COMPILE=$(OPTIONS_COMPILE_DEBUG)
@@ -24,19 +24,22 @@ endif
 # Build Action
 default:	build
 
-build:	$(OBJECTS_SECLIB) bin/sectest_x86
+build:	$(OBJECTS_SECLIB) bin/sectest
 
 obj/obj/linux-x86/seclib.o: seclib_src/seclib.c $(HEADERS_SECLIB)
 	@mkdir -p obj/obj/linux-x86/
 	@mkdir -p bin/
 	$(CC) $(OPTIONS_COMPILE) -c seclib_src/seclib.c -o obj/obj/linux-x86/seclib.o
 
-bin/sectest_x86: obj/obj/linux-x86/seclib.o $(HEADERS_SECLIB) $(OBJECTS_SECLIB)
-	$(CC) obj/obj/linux-x86/seclib.o $(OPTIONS_LINK) -o bin/sectest_x86
+obj/obj/linux-x86/seclib_test.o: seclib_src/seclib_test.c $(HEADERS_SECLIB)
+	$(CC) $(OPTIONS_COMPILE) -c seclib_src/seclib_test.c -o obj/obj/linux-x86/seclib_test.o
+
+bin/sectest: obj/obj/linux-x86/seclib.o $(HEADERS_SECLIB) $(OBJECTS_SECLIB)
+	$(CC) obj/obj/linux-x86/seclib.o obj/obj/linux-x86/seclib_test.o $(OPTIONS_LINK) -o bin/sectest
 
 clean:
 	-rm -f $(OBJECTS_SECLIB)
-	-rm -f bin/sectest_x86
+	-rm -f bin/sectest
 
 help:
 	@echo "make [DEBUG=YES]"

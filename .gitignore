@@ -1,5 +1,6 @@
 .vs/
 bin/*.exe
+bin/sectest
 obj/
 *.ilk
 *.dmp

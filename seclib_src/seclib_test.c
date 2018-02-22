@@ -1,4 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <wchar.h>
+#include <stdarg.h>
+#include <locale.h>
+#include <time.h>
+#include <errno.h>
+
 #include <seclib.h>
 
 int main(int argc, char *argv[])
@@ -24,11 +32,8 @@ int main(int argc, char *argv[])
 		Print("\nDone.\n");
 	}
 
-	Print("%s\n", _SS("PRODUCT_NAME_ELOGMGR"));
-
 	FreeCedar();
 	FreeMayaqua();
 	return 0;
 }
 
-OPTIONS_LINK_DEBUG=-g -fsigned-char -m64 -lm -ldl -lrt -lpthread -lssl -lcrypto -lreadline -lncurses -lz
