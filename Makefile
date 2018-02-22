@@ -10,7 +10,7 @@ OPTIONS_LINK_RELEASE=-O2 -fsigned-char -lm -ldl -lrt -lpthread -lssl -lcrypto -l
 
 HEADERS_SECLIB=seclib_src/seclib.h
 
-OBJECTS_SECLIB=obj/obj/linux-x86/seclib.o obj/obj/linux-x86/seclib_test.o
+OBJECTS_SECLIB=obj/obj/linux/seclib.o obj/obj/linux/seclib_test.o
 
 ifeq ($(DEBUG),YES)
 	OPTIONS_COMPILE=$(OPTIONS_COMPILE_DEBUG)
@@ -26,16 +26,16 @@ default:	build
 
 build:	$(OBJECTS_SECLIB) bin/sectest
 
-obj/obj/linux-x86/seclib.o: seclib_src/seclib.c $(HEADERS_SECLIB)
-	@mkdir -p obj/obj/linux-x86/
+obj/obj/linux/seclib.o: seclib_src/seclib.c $(HEADERS_SECLIB)
+	@mkdir -p obj/obj/linux/
 	@mkdir -p bin/
-	$(CC) $(OPTIONS_COMPILE) -c seclib_src/seclib.c -o obj/obj/linux-x86/seclib.o
+	$(CC) $(OPTIONS_COMPILE) -c seclib_src/seclib.c -o obj/obj/linux/seclib.o
 
-obj/obj/linux-x86/seclib_test.o: seclib_src/seclib_test.c $(HEADERS_SECLIB)
-	$(CC) $(OPTIONS_COMPILE) -c seclib_src/seclib_test.c -o obj/obj/linux-x86/seclib_test.o
+obj/obj/linux/seclib_test.o: seclib_src/seclib_test.c $(HEADERS_SECLIB)
+	$(CC) $(OPTIONS_COMPILE) -c seclib_src/seclib_test.c -o obj/obj/linux/seclib_test.o
 
-bin/sectest: obj/obj/linux-x86/seclib.o $(HEADERS_SECLIB) $(OBJECTS_SECLIB)
-	$(CC) obj/obj/linux-x86/seclib.o obj/obj/linux-x86/seclib_test.o $(OPTIONS_LINK) -o bin/sectest
+bin/sectest: obj/obj/linux/seclib.o $(HEADERS_SECLIB) $(OBJECTS_SECLIB)
+	$(CC) obj/obj/linux/seclib.o obj/obj/linux/seclib_test.o $(OPTIONS_LINK) -o bin/sectest
 
 clean:
 	-rm -f $(OBJECTS_SECLIB)
