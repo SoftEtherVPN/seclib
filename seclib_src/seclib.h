@@ -26,8 +26,8 @@
 
 //// Basic Variables
 
-#define	CEDAR_PRODUCT_STR			"SoftEther"
-#define	CEDAR_PRODUCT_STR_W			L"SoftEther"
+#define	CEDAR_PRODUCT_STR			"SecLib App"
+#define	CEDAR_PRODUCT_STR_W			L"SecLib App"
 #define	CEDAR_SERVER_STR			"SoftEther VPN Server"
 #define	CEDAR_BRIDGE_STR			"SoftEther VPN Bridge"
 #define	CEDAR_BETA_SERVER			"SoftEther VPN Server Pre Release"
