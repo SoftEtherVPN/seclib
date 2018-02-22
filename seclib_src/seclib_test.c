@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
 		Print("\nDone.\n");
 	}
 
+	Print("%s\n", _SS("PRODUCT_NAME_ELOGMGR"));
+
 	FreeCedar();
 	FreeMayaqua();
 	return 0;
