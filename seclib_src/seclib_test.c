@@ -30,3 +30,5 @@ int main(int argc, char *argv[])
 	FreeMayaqua();
 	return 0;
 }
+
+OPTIONS_LINK_DEBUG=-g -fsigned-char -m64 -lm -ldl -lrt -lpthread -lssl -lcrypto -lreadline -lncurses -lz
