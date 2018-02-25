@@ -216,7 +216,6 @@ UINT JsonArrayAddNumber(JSON_ARRAY *array, double number);
 UINT JsonArrayAddBool(JSON_ARRAY *array, int boolean);
 UINT JsonArrayAddNull(JSON_ARRAY *array);
 
-
 /*
 *JSON Value
 */
