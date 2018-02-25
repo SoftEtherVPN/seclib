@@ -16,6 +16,41 @@
 
 void DevTempTest()
 {
+	JSON_VALUE *v;
+	JSON_OBJECT *o;
+	JSON_OBJECT *o2;
+	JSON_VALUE *v2;
+	char *str;
+	
+	v = JsonNewObject();
+
+	o = JsonValueGetObject(v);
+
+	JsonDotSetStr(o, "aaa", "123");
+	JsonDotSetNumber(o, "bbb", 123456789123456ULL);
+
+	v2 = JsonNewObject();
+	o2 = JsonValueGetObject(v2);
+
+	JsonSet(o, "v2", v2);
+
+	JsonSetStr(o2, "Hello", "World");
+	JsonSetBool(o2, "Aho", true);
+
+	str = JsonSerializeToStringPretty(v);
+
+	Print("%s\n", str);
+
+	JsonFree(v);
+
+	v = JsonParseStringWithComments(str);
+	o = JsonValueGetObject(v);
+
+	Print("value = %s\n", JsonDotGetStr(o, "aaa"));
+
+	JsonFree(v);
+
+	Free(str);
 }
 
 
