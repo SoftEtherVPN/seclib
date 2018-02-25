@@ -9,6 +9,8 @@
 
 #include <seclib.h>
 
+#include "dev_temp.h"
+
 int main(int argc, char *argv[])
 {
 	//MayaquaMinimalMode();
@@ -17,20 +19,7 @@ int main(int argc, char *argv[])
 
 	Print("Hello World\n");
 
-	if (false)
-	{
-		char *src_dir = "@hamcore";
-		char *dst_filename = "c:\\tmp\\test.dat";
-
-		Print("Src Dir: '%s'\n", src_dir);
-		Print("Dest Filename: '%s'\n", dst_filename);
-
-		Print("\nProcessing...\n");
-
-		BuildHamcore(dst_filename, src_dir, true);
-
-		Print("\nDone.\n");
-	}
+	DevTempTest();
 
 	FreeCedar();
 	FreeMayaqua();
