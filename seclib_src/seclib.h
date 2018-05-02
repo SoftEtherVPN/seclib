@@ -5785,6 +5785,7 @@ void Win32AlertW(wchar_t *msg, wchar_t *caption);
 void Win32DebugAlert(char *msg);
 char* Win32GetProductId();
 void Win32SetHighPriority();
+void Win32SetLowPriority();
 void Win32RestorePriority();
 void *Win32NewSingleInstance(char *instance_name);
 void Win32FreeSingleInstance(void *data);
