@@ -7333,8 +7333,8 @@ USHORT CalcChecksum16(void *buf, UINT size);
 #pragma comment(lib, "crypt32.lib")
 
 // OpenSSL
-#pragma comment(lib, "libcrypto.lib")
-#pragma comment(lib, "libssl.lib")
+#pragma comment(lib, "libeay32.lib")
+#pragma comment(lib, "ssleay32.lib")
 #pragma comment(lib, "zlib.lib")
 #endif	// OS_WIN32
 
